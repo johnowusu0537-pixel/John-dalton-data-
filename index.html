@@ -1,32 +1,182 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
 
-  <title>John Dalton Data</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>John Dalton MTN Data</title>
 
-    body{font-family:Arial;margin:0;background:#f5f5f5;color:#111}
+<style>
 
-    header{background:#ffcc00;padding:25px 20px;text-align:center}
+*{box-sizing:border-box}
 
-    h1{margin:0;font-size:25px}
+body{
 
-    main{padding:20px;max-width:500px;margin:auto}
+  margin:0;
 
-    .card{background:white;padding:20px;margin:15px 0;border-radius:15px}
+  font-family:Arial,sans-serif;
 
-    .package{padding:18px;margin:10px 0;border:2px solid #ddd;border-radius:12px}
+  background:#f4f4f4;
 
-    button{width:100%;padding:16px;border:0;border-radius:10px;background:#111;color:white;font-size:17px}
+  color:#111;
 
-    input{width:100%;padding:15px;box-sizing:border-box;border:1px solid #ccc;border-radius:10px;font-size:16px}
+}
 
-  </style>
+header{
+
+  background:#ffcc00;
+
+  padding:28px 18px;
+
+  text-align:center;
+
+}
+
+header h1{
+
+  margin:0;
+
+  font-size:30px;
+
+  font-weight:900;
+
+}
+
+header p{
+
+  margin:8px 0 0;
+
+  font-size:16px;
+
+  font-weight:bold;
+
+}
+
+main{
+
+  max-width:520px;
+
+  margin:auto;
+
+  padding:18px;
+
+}
+
+.card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:22px;
+
+  margin-bottom:18px;
+
+  box-shadow:0 4px 15px #00000015;
+
+}
+
+h2{
+
+  margin-top:0;
+
+  font-size:28px;
+
+}
+
+.package{
+
+  border:2px solid #ddd;
+
+  border-radius:14px;
+
+  padding:18px;
+
+  margin:10px 0;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  background:white;
+
+  cursor:pointer;
+
+}
+
+.package.selected{
+
+  background:#ffcc00;
+
+  border-color:#111;
+
+}
+
+input{
+
+  width:100%;
+
+  padding:17px;
+
+  border:2px solid #ddd;
+
+  border-radius:12px;
+
+  font-size:18px;
+
+  outline:none;
+
+}
+
+input:focus{
+
+  border-color:#ffcc00;
+
+}
+
+.order{
+
+  width:100%;
+
+  padding:18px;
+
+  border:0;
+
+  border-radius:14px;
+
+  background:#25d366;
+
+  color:white;
+
+  font-size:19px;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+}
+
+.info{
+
+  text-align:center;
+
+  font-weight:bold;
+
+  line-height:1.6;
+
+}
+
+.price{
+
+  color:#555;
+
+}
+
+</style>
 
 </head>
 
@@ -42,39 +192,173 @@
 
 <main>
 
-  <div class="card">
+<div class="card">
 
-    <h2>Buy Data</h2>
+  <h2>Buy Data</h2>
 
-    <p>Choose your package:</p>
+  <p><b>Choose your package:</b></p>
 
-    <div class="package">1 GB — GH₵5</div>
+  <div class="package" onclick="selectPackage(this,'1GB','GH₵5')">
 
-    <div class="package">2 GB — GH₵10</div>
-
-    <div class="package">3 GB — GH₵15</div>
-
-    <div class="package">4 GB — GH₵20</div>
-
-    <div class="package">5 GB — GH₵25</div>
+    1GB — GH₵5
 
   </div>
 
-  <div class="card">
+  <div class="package" onclick="selectPackage(this,'2GB','GH₵10')">
 
-    <h2>Recipient Number</h2>
-
-    <input type="tel" placeholder="024 123 4567">
+    2GB — GH₵10
 
   </div>
 
-  <div class="card">
+  <div class="package" onclick="selectPackage(this,'3GB','GH₵15')">
 
-   <a href="https://wa.me/233556970191?text=Hello%20John%20Dalton%2C%20I%20want%20to%20order%20data" target="_blank"><button>Order Data</button></a> 
+    3GB — GH₵15
 
   </div>
+
+  <div class="package" onclick="selectPackage(this,'4GB','GH₵20')">
+
+    4GB — GH₵20
+
+  </div>
+
+  <div class="package" onclick="selectPackage(this,'5GB','GH₵25')">
+
+    5GB — GH₵25
+
+  </div>
+
+  <div class="package" onclick="selectPackage(this,'6GB','GH₵30')">
+
+    6GB — GH₵30
+
+  </div>
+
+  <div class="package" onclick="selectPackage(this,'7GB','GH₵35')">
+
+    7GB — GH₵35
+
+  </div>
+
+  <div class="package" onclick="selectPackage(this,'8GB','GH₵40')">
+
+    8GB — GH₵40
+
+  </div>
+
+  <div class="package" onclick="selectPackage(this,'9GB','GH₵45')">
+
+    9GB — GH₵45
+
+  </div>
+
+  <div class="package" onclick="selectPackage(this,'10GB','GH₵50')">
+
+    10GB — GH₵50
+
+  </div>
+
+</div>
+
+<div class="card">
+
+  <h2>Recipient Number</h2>
+
+  <input
+
+    id="number"
+
+    type="tel"
+
+    placeholder="Enter recipient number"
+
+    maxlength="10">
+
+</div>
+
+<div class="card">
+
+  <div class="info">
+
+    <p id="selected">No package selected</p>
+
+    <button class="order" onclick="orderWhatsApp()">
+
+      ORDER VIA WHATSAPP
+
+    </button>
+
+    <p class="price">JOHN DALTON • 0556970191</p>
+
+  </div>
+
+</div>
 
 </main>
+
+<script>
+
+let selectedPackage = "";
+
+function selectPackage(element, data, price){
+
+  document.querySelectorAll(".package").forEach(function(item){
+
+    item.classList.remove("selected");
+
+  });
+
+  element.classList.add("selected");
+
+  selectedPackage = data + " — " + price;
+
+  document.getElementById("selected").innerText =
+
+    "Selected: " + selectedPackage;
+
+}
+
+function orderWhatsApp(){
+
+  let number = document.getElementById("number").value.trim();
+
+  if(selectedPackage === ""){
+
+    alert("Please select a data package.");
+
+    return;
+
+  }
+
+  if(number === ""){
+
+    alert("Please enter the recipient number.");
+
+    return;
+
+  }
+
+  let message =
+
+    "Hello John Dalton,%0A%0A" +
+
+    "I want to order:%20" + encodeURIComponent(selectedPackage) +
+
+    "%0ARecipient Number:%20" + encodeURIComponent(number) +
+
+    "%0A%0AThank you.";
+
+  window.open(
+
+    "https://wa.me/233556970191?text=" + message,
+
+    "_blank"
+
+  );
+
+}
+
+</script>
 
 </body>
 
